@@ -20,33 +20,34 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	int maxWidth = 50;
+	//Задаём максимальную высоту ёлочки
+	int maxWidth = 100;
 
-	std::cout << "Введите общую ширину колонтитула: ";
-	int widthFooter;
-	std::cin >> widthFooter;
-	while (widthFooter < 0 || widthFooter > maxWidth) {
-		std::cout << "Ширина колонтитула должна быть в пределах от 0 до " << maxWidth << ". Введите снова: ";
-		std::cin >> widthFooter;
+	std::cout << "Введите высоту ёлочки: ";
+	int spruceHeight;
+	std::cin >> spruceHeight;
+	while (spruceHeight < 1 || widthFooter > maxWidth) {
+		std::cout << "Высота ёлочки должна быть в пределах от 1 до " << maxWidth << ". Введите снова: ";
+		std::cin >> spruceHeight;
 	}
 
-	std::cout << "Введите количество восклицательных знаков: ";
-	int nuberExclamation;
-	std::cin >> nuberExclamation;
-	while (nuberExclamation < 0 || nuberExclamation > maxWidth) {
-		std::cout << "Количество восклицательных знаков должно быть в пределах от 0 до " << maxWidth << ". Введите снова: ";
-		std::cin >> nuberExclamation;
+	//Вычисляем ширину ёлочки
+	int spruceWidth = 1 + (spruceHeight - 1) * 2;
+
+	for (int spruceLevel = 0; spruceLevel <= spruceHeight; spruceLevel++) {
+
+		//Цетр ёлочки равен её высоте
+		//Выводим левую половину пробелов
+		for (int i = 0; i < spruceHeight; i++) std::cout << " ";
+
+		//Выводим #
+		for (int i = 0; i <  1 + (spruceLevel * 2); i++) std::cout << "#";
+
+		//Выводим правую половину пробелов
+		for (int i = 0; i < spruceHeight; i++) std::cout << " ";
+
+		std::cout << std::endl;
 	}
-
-	int beginPositionExclamation = (widthFooter / 2) - (nuberExclamation / 2);
-
-	//Выводим левую половину колотитула
-	for (int i = 0; i < beginPositionExclamation; i++) std::cout << "~";
-
-	//Выводим восклицательные знаки
-	for (int i = 0; i < nuberExclamation; i++) std::cout << "!";
-
-	//Выводим правую половину колотитула
-	for (int i = beginPositionExclamation + nuberExclamation + 1; i <= widthFooter; i++) std::cout << "~";
+	
 
 }
