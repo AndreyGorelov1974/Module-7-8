@@ -35,16 +35,16 @@ int main()
 	int spruceWidth = 1 + (spruceHeight - 1) * 2;
 
 	//Цетр ёлочки равен её высоте
-	for (int spruceLevel = 0; spruceLevel <= spruceHeight; spruceLevel++) {
+	for (int spruceLevel = 0; spruceLevel < spruceHeight; spruceLevel++) {
 
 		//Выводим левую половину пробелов
-		for (int i = 0; i < spruceHeight; i++) std::cout << " ";
+		for (int i = 1; i < spruceHeight - spruceLevel; i++) std::cout << " ";
 
 		//Выводим #
 		for (int i = 0; i <  1 + (spruceLevel * 2); i++) std::cout << "#";
 
 		//Выводим правую половину пробелов
-		for (int i = 0; i < spruceHeight; i++) std::cout << " ";
+		for (int i = 1; i < spruceHeight - spruceLevel; i++) std::cout << " ";
 
 		std::cout << std::endl;
 	}
