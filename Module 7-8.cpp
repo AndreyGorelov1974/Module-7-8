@@ -34,9 +34,9 @@ int main()
 	//Вычисляем ширину ёлочки
 	int spruceWidth = 1 + (spruceHeight - 1) * 2;
 
+	//Цетр ёлочки равен её высоте
 	for (int spruceLevel = 0; spruceLevel <= spruceHeight; spruceLevel++) {
 
-		//Цетр ёлочки равен её высоте
 		//Выводим левую половину пробелов
 		for (int i = 0; i < spruceHeight; i++) std::cout << " ";
 
@@ -48,6 +48,4 @@ int main()
 
 		std::cout << std::endl;
 	}
-	
-
 }
