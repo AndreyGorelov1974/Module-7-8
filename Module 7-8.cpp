@@ -26,7 +26,7 @@ int main()
 	std::cout << "Введите высоту ёлочки: ";
 	int spruceHeight;
 	std::cin >> spruceHeight;
-	while (spruceHeight < 1 || widthFooter > maxWidth) {
+	while (spruceHeight < 1 || spruceHeight > maxWidth) {
 		std::cout << "Высота ёлочки должна быть в пределах от 1 до " << maxWidth << ". Введите снова: ";
 		std::cin >> spruceHeight;
 	}
